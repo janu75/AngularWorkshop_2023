@@ -1,5 +1,6 @@
 import { Component, ElementRef, Injector } from '@angular/core';
 
+import { Todo } from './todo';
 import { TodoService } from './todo.service';
 
 @Component({
@@ -14,6 +15,9 @@ export class AppComponent {
   public number = 3.14159;
   public todoObject = { name: 'Wash clothes', done: false, id: 3 };
 
+  public show: boolean = true;
+  public todos: Todo[];
+
   constructor(
     private readonly elementRef: ElementRef,
     private readonly todoService: TodoService
@@ -21,6 +25,7 @@ export class AppComponent {
     console.log('elementRef from constructor', elementRef);
 
     console.log(todoService.getAll());
+    this.todos = todoService.getAll();
   }
 
   public onClick(event: MouseEvent): void {
@@ -33,5 +38,9 @@ export class AppComponent {
 
   catchDoneEvent(todo: any) {
     console.log(todo);
+  }
+
+  public toggle() {
+    this.show = !this.show;
   }
 }

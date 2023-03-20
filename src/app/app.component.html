@@ -357,7 +357,7 @@
 </div>
 
 <div class="content" role="main">
-  {{ value | uppercase }}
+<!--  {{ value | uppercase }}
 
   {{ 17 + 4 }}
 
@@ -379,6 +379,18 @@
     [todo]="todoObject"
     (done)="catchDoneEvent($event)"
   ></app-todo>
+-->
+  <button (click)="toggle()">Toggle</button>
+  <div *ngIf="show">
+    I’m visible!
+  </div>
+
+  <ul>
+    <li *ngFor="let todo of todos">{{ todo.name }}</li>
+  </ul>
+
+  <app-todo *ngFor="let todo of todos" [todo]="todo" (done)="catchDoneEvent($event)"></app-todo>	
+
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

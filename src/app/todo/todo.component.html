@@ -1,5 +1,5 @@
 <div>
-  <p appClick appColor color="green">
+<!--  <p appClick appColor color="green">
     inside todo-component: <br />
     {{ todo | json }}
   </p>
@@ -8,4 +8,9 @@
   </p>
 
   <button (click)="markTodoAsDone($event)">mark as done</button>
+  -->
+  <label>
+	  <input type="checkbox" [checked]="todo.done">
+	  {{ todo.name }}
+  </label>  
 </div>

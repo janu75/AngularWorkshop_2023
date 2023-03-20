@@ -6,7 +6,11 @@ import { Todo } from './todo';
 export class TodoService {
   private todos: Todo[] = [];
 
-  constructor() { }
+  constructor() { 
+    this.todos.push({ name: "Wash clothes", done: false, id: 3 });
+    this.todos.push({ name: "Do stuff", done: false, id: 2 });
+    this.todos.push({ name: "Go play", done: false, id: 1 });
+  }
 
 
   public create(todo: Todo): Todo {
