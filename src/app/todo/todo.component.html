@@ -1,0 +1,11 @@
+<div>
+  <p appClick appColor color="green">
+    inside todo-component: <br />
+    {{ todo | json }}
+  </p>
+  <p>
+    <span appColor [color]="colorToBind">test to apply directive on</span>
+  </p>
+
+  <button (click)="markTodoAsDone($event)">mark as done</button>
+</div>
